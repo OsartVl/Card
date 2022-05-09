@@ -87,7 +87,7 @@ body{
 
 .card{
     max-width: 350px;
-    background: url(/jpg/alan-w-P2Ehy4BtV9Q-unsplash.jpg) 50% 0/cover no-repeat;
+    background: url(../jpg/alan-w-P2Ehy4BtV9Q-unsplash.jpg) 50% 0/cover no-repeat;
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
@@ -99,11 +99,11 @@ body{
     transform: scale(1.02);
 }
 .card:nth-child(1){
-    background: url(/jpg/ernest-imoesi-Urg2oQ7Q-5c-unsplash\ \(1\).jpg) 50% 0/cover no-repeat;
+    background: url(../jpg/ernest-imoesi-Urg2oQ7Q-5c-unsplash\ \(1\).jpg) 50% 0/cover no-repeat;
 
 }
 .card:nth-child(3){
-    background: url(/jpg/mouad-bouallayel-D6AHVhmpw6Y-unsplash.jpg) 50% 0/cover no-repeat;
+    background: url(../jpg/mouad-bouallayel-D6AHVhmpw6Y-unsplash.jpg) 50% 0/cover no-repeat;
 
 }
 
