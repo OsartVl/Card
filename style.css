@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Roboto:wght@400;900&display=swap');
+:root {
+    --header-height: 3.5rem;
+  
+      /*========== Colors ==========*/
+      --first-hue: #333;
+      --text-color: #fff;
+      --first-color-gradient: #F12711;
+      --second-color-gradient: #F5AF19;
+      --color-gradient: #D9210D;
+      --second-gradient: #F4AA0B;
+      /*========== Font and typography ==========*/
+      --body-font: 'Roboto', sans-serif;
+      --font-style: 'Open Sans', sans-serif;
+      --normal-font-size: 400;
+      --font-size: 1.5rem;
+      --font-size-small: 0.875rem;
+      --font-weight-extrabold: 800;
+      --font-weight-normal: 400;
+  }
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body, 
+  button, 
+  input, 
+  textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+  }
+  
+  body{
+      background-color: var(--first-hue);
+      color: hsl(var(--text-color));
+      transition: .4s;
+  }
+  
+  h1, h2, h3{
+    color: var(--text-color);
+    font-weight: var(--font-semi-bold);
+  }
+  span{
+    color: var(--title-color);
+  }
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  button{
+    cursor: pointer;  
+    border: none;
+    outline: none;
+  }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card{
+    max-width: 350px;
+    background: url(./jpg/alan-w-P2Ehy4BtV9Q-unsplash.jpg) 50% 0/cover no-repeat;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .6s ease;
+    outline: none;
+}
+
+.active{
+    transform: scale(1.02);
+}
+.card:nth-child(1){
+    background: url(./jpg/ernest-imoesi-Urg2oQ7Q-5c-unsplash\ \(1\).jpg) 50% 0/cover no-repeat;
+
+}
+.card:nth-child(3){
+    background: url(./jpg/mouad-bouallayel-D6AHVhmpw6Y-unsplash.jpg) 50% 0/cover no-repeat;
+
+}
+
+.card:hover,
+.card:focus-within{
+    transform: scale(1.02);
+}
+
+.card__container{
+    --padding: 2rem;
+    padding: var(--padding);
+    margin-top: 15rem;
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.3) 20%,
+        hsl(0 0% 10% / 1)
+    );
+    background-size: 140% 140%;
+    transform: translateY(65%);
+    transition: transform 1s ease;
+}
+
+.card:hover .card__container{
+    transform: translateY(0%);
+}
+
+.card__title{
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-extrabold);
+    width: max-content;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.card__title::after{
+    content: '';
+    position: absolute;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    height: 3px;
+    background-color: var(--text-color);
+    transform-origin: left;
+    transform: scaleX(0);
+
+    transition: transform 0.6s ease;
+    
+}
+
+.card:hover .card__title::after{
+    transform: scaleX(1);
+}
+
+.card__subtitle{
+    color: var(--text-color);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.15rem;
+    font-family: var(--font-style);
+    font-size: var(--font-size-small);
+    margin-bottom: 1.2rem;
+}
+
+.card__button{
+    padding: 0.5rem 2rem;
+    border-radius: 0.2rem;
+    background: linear-gradient( 45deg, var(--first-color-gradient), var(--second-color-gradient));
+    color: var(--text-color);
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.card__button:hover,:focus{
+    background: linear-gradient( 45deg, var(--color-gradient), var(--second-gradient));
+}
+
+@media screen and (max-width: 1024px) {
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
